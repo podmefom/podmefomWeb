@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --primary-color: #3498db;
+    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    --spacing-unit: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: #2c2c2e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: #000000;
+    color: white;   
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    position: sticky;
+}
+
+header h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-weight: 10; 
+    font-size: 2.8rem;
+    letter-spacing: 15px;
+    line-height: 1;
+    margin: 0;
+    background-color: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.5;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.main-container {
+    padding: 15px;
+}
+
+.block-title {
+    padding: 0 0 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.block-title h2 {
+    padding: 5px 10px 5px 10px;
+    letter-spacing: 2.5px;
+    font-weight: 1000;
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.2px);
+    -webkit-backdrop-filter: blur(11.2px);
+}
+
+.tracks-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+}
+
+.track-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.2px);
+    -webkit-backdrop-filter: blur(11.2px);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-top-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-top-titles h3 {
+    text-align: center;
+}
+
+.card-top .track-title {
+    font-weight: 1000;
+}
+
+.card-top .track-author {
+    font-weight: 500;
+}
+
+
+.card-top img {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50px;
+}
+
+.card-mid {
+    display: flex;
+    gap: 20px;
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #007AFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+}
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+footer {
+    background-color: #000000;
+    color: white;   
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+.footer-content, .footer-content h2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-weight: 10; 
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 1;
+    margin: 0;
+    background-color: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.footer-content h2 {
+    font-size: 1.5rem;
+    opacity: 1;
+}
