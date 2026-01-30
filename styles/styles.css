@@ -77,6 +77,14 @@ main {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(11.2px);
     -webkit-backdrop-filter: blur(11.2px);
+    transition: all ease .3s;
+}
+
+.block-title h2:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+    transform: translateY(-4px);
 }
 
 .tracks-cards {
@@ -159,7 +167,6 @@ main {
     align-items: center;
     gap: 20px;
 }
-
 
 footer {
     background-color: #000000;
