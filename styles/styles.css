@@ -99,6 +99,7 @@ main {
 }
 
 .card-top {
+    padding: 15px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -130,8 +131,10 @@ main {
 }
 
 .card-mid {
+    padding: 15px;
     display: flex;
     gap: 20px;
+
 }
 
 .play-btn {
@@ -151,6 +154,7 @@ main {
 }
 
 .card-bottom {
+    padding: 15px;
     display: flex;
     align-items: center;
     gap: 20px;
