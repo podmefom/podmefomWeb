@@ -6,7 +6,6 @@
     <title>www.podmefom.com</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
-    
 </head>
 <body>
     <header>
@@ -24,7 +23,7 @@
                 <h2 class="block-title-beats">Биты</h2>
             </div>
             <div class="tracks-cards">
-                <div class="track-card" id="track">
+                <div class="track-card track" id="track">
                     <div class="card-top">
                         <img src="assets/images/1.jpg" alt="logo" class="track-logo">
                         <div class="card-top-titles">
@@ -34,6 +33,7 @@
                     </div>
 
                     <div class="card-mid">
+                        <div class="waveform-container"></div>
                         <button class="play-btn" data-audio="assets/audio/1.mp3">
                             <i class="fas fa-play"></i>
                         </button>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="track-card" id="beats">
+                <div class="beat-card" id="beats">
                     <div class="card-top" >
                         <img src="assets/images/1.jpg" alt="logo" class="track-logo">
                         <div class="card-top-titles">
@@ -60,7 +60,36 @@
                     </div>
 
                     <div class="card-mid">
-                        <button class="play-btn" data-audio="assets/audio/1.mp3">
+                        <div class="waveform-container"></div>
+                        <button class="play-btn" data-audio="./assets/audio/2.mp3">
+                        <i class="fas fa-play"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="card-bottom">
+                        <div class="play-count">
+                            <i class="fas fa-wave-square" id="play-count"></i>
+                        </div>
+                        <div class="like-count">
+                            <i class="fa-regular fa-thumbs-up" id="no-like"></i>
+                            <!-- <i class="fa-solid fa-thumbs-up" id="yes-like"></i> -->
+                        </div>   
+                    </div>
+                </div>
+
+                <div class="beat-card" id="beats">
+                    <div class="card-top" >
+                        <img src="assets/images/1.jpg" alt="logo" class="track-logo">
+                        <div class="card-top-titles">
+                            <h3 class="track-title">1</h3>
+                            <h3 class="track-author"></h3>
+                        </div>
+                    </div>
+
+                    <div class="card-mid">
+                        <div class="waveform-container"></div>
+                        <button class="play-btn" data-audio="assets/audio/3.mp3">
                         <i class="fas fa-play"></i>
                         </button>
 
@@ -91,7 +120,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
     <script src="js/state.js"></script>
     <script src="https://kit.fontawesome.com/c20d506928.js" crossorigin="anonymous"></script>
 </body>

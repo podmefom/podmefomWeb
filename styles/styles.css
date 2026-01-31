@@ -77,7 +77,7 @@ main {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(11.2px);
     -webkit-backdrop-filter: blur(11.2px);
-    transition: all ease .3s;
+    transition: all ease .5s;
 }
 
 .block-title h2:hover {
@@ -87,13 +87,20 @@ main {
     transform: translateY(-4px);
 }
 
+.block-title-tracks.active, .block-title-beats.active {
+    background-color: black;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+}
+
 .tracks-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 20px;
 }
 
-.track-card {
+.track-card, .beat-card {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -139,10 +146,18 @@ main {
 }
 
 .card-mid {
+    display: flex;
+    align-items: center;
+    width: 100%;
     padding: 15px;
     display: flex;
     gap: 20px;
 
+}
+
+.waveform-container {
+    flex-grow: 1;
+    height: 50px;
 }
 
 .play-btn {
