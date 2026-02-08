@@ -17,100 +17,139 @@
     </header>
 
     <main>
-        <div class="main-container">
-            <div class="block-title">
-                <h2 class="block-title-tracks">Треки</h2>
-                <h2 class="block-title-beats">Биты</h2>
-            </div>
-            <div class="tracks-cards">
-                <div class="track-card track" id="track">
-                    <div class="card-top">
-                        <img src="assets/images/1.jpg" alt="logo" class="track-logo">
-                        <div class="card-top-titles">
-                            <h3 class="track-title">Title</h3>
-                            <h3 class="track-author">Author</h3>
-                        </div>
-                    </div>
-
-                    <div class="card-mid">
-                        <div class="waveform-container"></div>
-                        <button class="play-btn" data-audio="assets/audio/1.mp3">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-
-                    <div class="card-bottom">
-                        <div class="play-count">
-                            <i class="fas fa-wave-square" id="play-count"></i>
-                        </div>
-                        <div class="like-count">
-                            <i class="fa-regular fa-thumbs-up" id="no-like"></i>
-                            <!-- <i class="fa-solid fa-thumbs-up" id="yes-like"></i> -->
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="beat-card" id="beats">
-                    <div class="card-top" >
-                        <img src="assets/images/1.jpg" alt="logo" class="track-logo">
-                        <div class="card-top-titles">
-                            <h3 class="track-title">PODMEFOM</h3>
-                            <h3 class="track-author">PODMFEOM</h3>
-                        </div>
-                    </div>
-
-                    <div class="card-mid">
-                        <div class="waveform-container"></div>
-                        <button class="play-btn" data-audio="./assets/audio/2.mp3">
-                        <i class="fas fa-play"></i>
-                        </button>
-
-                    </div>
-
-                    <div class="card-bottom">
-                        <div class="play-count">
-                            <i class="fas fa-wave-square" id="play-count"></i>
-                        </div>
-                        <div class="like-count">
-                            <i class="fa-regular fa-thumbs-up" id="no-like"></i>
-                            <!-- <i class="fa-solid fa-thumbs-up" id="yes-like"></i> -->
-                        </div>   
-                    </div>
-                </div>
-
-                <div class="beat-card" id="beats">
-                    <div class="card-top" >
-                        <img src="assets/images/1.jpg" alt="logo" class="track-logo">
-                        <div class="card-top-titles">
-                            <h3 class="track-title">1</h3>
-                            <h3 class="track-author"></h3>
-                        </div>
-                    </div>
-
-                    <div class="card-mid">
-                        <div class="waveform-container"></div>
-                        <button class="play-btn" data-audio="assets/audio/3.mp3">
-                        <i class="fas fa-play"></i>
-                        </button>
-
-                    </div>
-
-                    <div class="card-bottom">
-                        <div class="play-count">
-                            <i class="fas fa-wave-square" id="play-count"></i>
-                        </div>
-                        <div class="like-count">
-                            <i class="fa-regular fa-thumbs-up" id="no-like"></i>
-                            <!-- <i class="fa-solid fa-thumbs-up" id="yes-like"></i> -->
-                        </div>   
-                    </div>
-                </div>
-            </div>
+    <div class="main-container">
+        
+        <div class="block-title">
+            <h2 id="tab-tracks" class="active">Треки</h2> 
+            <h2 id="tab-beats">Биты</h2>
         </div>
 
-        <div id="app">
+        <div id="tracks-list" class="tracks-cards">
+            
+            <div class="track-card">
+                <div class="card-top">
+                    <img src="assets/images/1.jpg" alt="Cover">
+                    <div class="card-top-titles">
+                        <h3 class="track-title">Night Drive</h3>
+                        <h3 class="track-author">Podmefom</h3>
+                    </div>
+                </div>
+
+                <div class="card-mid">
+                    <div class="waveform-container">
+                        </div>
+                </div>
+
+                <div class="card-bottom">
+                    <div class="stat-item like-stat">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>142</span>
+                    </div>
+                    <span class="card-duration">2:45</span>
+                    <button class="play-btn" data-audio="assets/audio/1.mp3">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="track-card">
+                <div class="card-top">
+                    <img src="assets/images/1.jpg" alt="Cover">
+                    <div class="card-top-titles">
+                        <h3 class="track-title">Neon City</h3>
+                        <h3 class="track-author">Podmefom</h3>
+                    </div>
+                </div>
+                <div class="card-mid">
+                    <div class="waveform-container"></div>
+                </div>
+                <div class="card-bottom">
+                    <div class="stat-item like-stat">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>89</span>
+                    </div>
+                    <span class="card-duration">3:10</span>
+                    <button class="play-btn" data-audio="assets/audio/2.mp3">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+
         </div>
-    </main>
+
+        <div id="beats-list" class="tracks-cards" style="display: none;">
+            
+            <div class="beat-card">
+                <div class="card-top">
+                    <img src="assets/images/1.jpg" alt="Cover">
+                    <div class="card-top-titles">
+                        <h3 class="track-title">Trap Soul</h3>
+                        <h3 class="track-author">Type Beat</h3>
+                    </div>
+                </div>
+                <div class="card-mid">
+                    <div class="waveform-container"></div>
+                </div>
+                <div class="card-bottom">
+                    <div class="stat-item like-stat">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>55</span>
+                    </div>
+                    <span class="card-duration">1:50</span>
+                    <button class="play-btn" data-audio="assets/audio/3.mp3">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+
+             <div class="beat-card">
+                <div class="card-top">
+                    <img src="assets/images/1.jpg" alt="Cover">
+                    <div class="card-top-titles">
+                        <h3 class="track-title">Drill Hard</h3>
+                        <h3 class="track-author">Podmefom</h3>
+                    </div>
+                </div>
+                <div class="card-mid">
+                    <div class="waveform-container"></div>
+                </div>
+                <div class="card-bottom">
+                    <div class="stat-item like-stat">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>201</span>
+                    </div>
+                    <span class="card-duration">2:15</span>
+                    <button class="play-btn" data-audio="assets/audio/4.mp3">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom-player">
+            <div class="player-info">
+                <img src="" alt="" class="current-track-img" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px; display: none;"> 
+                <div class="current-track-details">
+                    <h4 class="current-track-title">Выберите трек</h4>
+                    <p class="current-track-artist">-</p>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                <button id="main-play-btn"><i class="fas fa-play"></i></button>
+                <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+            </div>
+
+            <div class="player-volume">
+                <i class="fas fa-volume-up" style="margin-right: 10px;"></i>
+                <input type="range" id="global-volume" min="0" max="1" step="0.1" value="0.5">
+            </div> 
+        </div>
+
+    </div>
+</main>
 
     <footer>
         <div class="footer-container">
@@ -121,7 +160,6 @@
         </div>
     </footer>
     <script type="module" src="js/app.js"></script>
-    <script src="js/state.js"></script>
     <script src="https://kit.fontawesome.com/c20d506928.js" crossorigin="anonymous"></script>
 </body>
 </html>
