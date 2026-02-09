@@ -15,7 +15,7 @@ const tracks = [
     },
     {
         id: 3,
-        title: "хуй",
+        title: "Super Mega Extra Long Remix 2026",
         artist: "хуй",
         url: "assets/audio/3.mp3",
         duration: 3

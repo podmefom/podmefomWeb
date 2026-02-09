@@ -290,7 +290,27 @@ header h1 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: inline-block;
+    transition: transform .3s ease;
 }
+
+.current-track-title.scrolling {
+    animation: marquee 10s linear infinite;
+    overflow: visible; 
+}
+
+.current-track-title.scrolling::after {
+    content: attr(data-text); 
+    padding-left: 50px;       
+    display: inline-block;
+}
+
+.track-title-container {
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 
 .player-controls {
     display: flex;
@@ -399,4 +419,9 @@ footer {
     .card-top { min-width: auto; }
     .card-bottom { width: 100%; justify-content: space-between; }
     .bottom-player { width: 100%; bottom: 0; border-radius: 0; }
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); } 
 }

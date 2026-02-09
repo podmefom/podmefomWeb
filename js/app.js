@@ -3,6 +3,7 @@ import state from './state.js'
 
 let currentActiveInstance;
 
+
 const wavesurferOptions = {
     waveColor: '#4F4A85',
     progressColor: '#6c5ce7',
@@ -14,9 +15,16 @@ const wavesurferOptions = {
 function updateBottomPlayer(track) {
     const title = document.querySelector('.current-track-title');
     const artist = document.querySelector('.current-track-artist');
+    const titleContainer = document.querySelector('.track-title-container');
     if (track) {
         title.textContent = track.title;
+        title.setAttribute('data-text', track.title)
         artist.textContent = track.artist;
+        if (title.scrollWidth > titleContainer.offsetWidth) {
+        title.classList.add('scrolling');
+        } else {
+        title.classList.remove('scrolling');
+        }
     }
 }
 
@@ -49,6 +57,8 @@ function initAudioPlayers() {
             url: audioUrl,
         });
 
+
+        
         if (likeButton) {
             likeButton.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -70,12 +80,15 @@ function initAudioPlayers() {
             wavesurfer.playPause();
             currentActiveInstance = wavesurfer;
 
+            
             const trackInfo = state.allTracks.find(t => t.url === audioUrl);
             if (trackInfo) {
                 state.currentTrackIndex = state.allTracks.indexOf(trackInfo);
                 state.isPlaying = true;
                 updateBottomPlayer(trackInfo);
             }
+
+            currentActiveInstance.setVolume(globalVolume.value); 
         });
 
         wavesurfer.on('play', () => {
@@ -100,6 +113,13 @@ function initAudioPlayers() {
             const totalDisplay = document.querySelector('.total-duration');
             if (totalDisplay) totalDisplay.textContent = formatTime(wavesurfer.getDuration());
         });
+
+        wavesurfer.on('finish' , () => {
+            state.currentTrackIndex = (state.currentTrackIndex + 1) % state.allTracks.length;
+            const targetTrack = state.allTracks[state.currentTrackIndex];
+            const targetBtn = document.querySelector(`[data-audio="${targetTrack.url}"]`);
+            targetBtn?.click();
+        });
     });
 }
 
@@ -115,6 +135,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainBtn = document.getElementById('main-play-btn');
     const nextBtn = document.getElementById('next-btn');
 
+    const globalVolume = document.getElementById('global-volume');
+
+    globalVolume.addEventListener('input', (e) => {
+        if (currentActiveInstance){
+            currentActiveInstance.setVolume(e.target.value);
+        };
+    });
+    
     function switchToTracks() {
         if (tracksList && beatsList) {
             tracksList.style.display = "flex";
@@ -144,7 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     mainBtn?.addEventListener('click', () => {
-        if (currentActiveInstance) currentActiveInstance.playPause();
+        if (currentActiveInstance) {
+            currentActiveInstance.playPause();
+        } else {
+            const firstPlayBtn = document.querySelector('.play-btn');
+            if (firstPlayBtn) {
+                firstPlayBtn.click();
+            };
+        }
     });
 
     nextBtn?.addEventListener('click', () => {
